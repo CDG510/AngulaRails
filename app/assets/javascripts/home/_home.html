@@ -11,6 +11,8 @@
       <a ng-show="post.link" href="{{post.link}}">
         {{post.title}}
       </a>
+      posted by <a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a>
+
       <span ng-hide="post.link">
         {{post.title}}
       </span>

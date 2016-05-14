@@ -6,8 +6,8 @@ class PostsController < ApplicationController
     end
 
     def create
-      respond_with Post.create(post_params)
-    end
+    respond_with Post.create(post_params.merge(user_id: current_user.id))
+  end
 
     def show
       respond_with Post.find(params[:id])

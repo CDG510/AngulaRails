@@ -18,13 +18,12 @@ angular.module('flapperNews')
   }
 
   ///update upvotes
-  o.upvote = function(post){
-      console.log(post.id);
-      return $http.post('/posts/'+post.id+'/upvote.json')
-        .success(function(data){
-            post.upvotes+=1;
-        })
-  }
+  o.upvote = function(post) {
+   return $http.put('/posts/' + post.id + '/upvote.json')
+     .success(function(data){
+       post.upvotes += 1;
+     });
+ };
 
   o.get = function(id) {
       return $http.get('/posts/' + id + '.json')
