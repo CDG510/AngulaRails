@@ -18,7 +18,8 @@
       </span>
     </span>
     <span>
-        <a href="#/posts/{{post.id}}">Comments</a>
+        {{post.comments.length}}
+        <a href="#/posts/{{post.id}}">Comment{{posts.comments.length > 1 ? s : null}}</a>
     </span>
   </div>
 

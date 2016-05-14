@@ -5,11 +5,11 @@ angular.module('flapperNews')
     'posts',
     'post',
     function($scope, $stateParams, posts, post){
-    $scope.post = post;
+        $scope.post = post;
 
-    $scope.incrementUpvotes = function(comment){
-        posts.upvoteComment(post, comment);
-    };
+        $scope.incrementUpvotes = function(comment){
+            posts.upvoteComment(post, comment);
+        };
 
       $scope.addComment = function(){
         if($scope.body === '') { return; }
@@ -19,8 +19,8 @@ angular.module('flapperNews')
         }).success(function(comment) {
           $scope.post.comments.push(comment);
         });
-        $scope.body = '';
-        };
+            $scope.body = '';
+    };
 
 
 }]);
