@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FlapperNews</title>
+  <title>Chil</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="flapperNews">
-  <div class="row">
+<body ng-app="chilBlog" id="background">
+  <div class="row" >
 
-    <div class="col-md-6 col-md-offset-3">
-      <div ng-include="'nav/_nav.html'"></div>
+    <div class="col-md-8 col-md-offset-2" >
+      <div ng-include="'nav/_nav.html'" class="row"></div>
       <ui-view></ui-view>
     </div>
   </div>

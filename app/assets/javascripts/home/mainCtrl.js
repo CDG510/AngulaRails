@@ -1,19 +1,25 @@
-angular.module('flapperNews').controller('MainCtrl', [
-'$scope', 'posts', function($scope, posts){
+angular.module('chilBlog').controller('mainCtrl', [
+'$scope', 'posts', 'Auth', function($scope, posts, Auth){
     $scope.posts = posts.posts
+    console.log($scope.posts)
+    $scope.signedIn = Auth.isAuthenticated;
 
       $scope.addPost = function(){
         if(!$scope.title || $scope.title === '') { return; }
         posts.create({
           title: $scope.title,
-          link: $scope.link,
+          body: $scope.body,
         });
         $scope.title = '';
-        $scope.link = '';
+        $scope.body= '';
       };
 
       $scope.incrementUpvotes = function(post) {
        posts.upvote(post);
      };
+
+     Auth.currentUser().then(function (user){
+         $scope.user = user;
+       });
 
 }])

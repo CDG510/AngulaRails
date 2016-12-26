@@ -1,4 +1,4 @@
-angular.module('flapperNews', ['ui.router', 'templates', 'Devise'])
+angular.module('chilBlog', ['ui.router', 'templates', 'Devise'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
@@ -8,7 +8,7 @@ function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/home',
       templateUrl: 'home/_home.html',
-      controller: 'MainCtrl',
+      controller: 'mainCtrl',
       resolve: {
           postPromise: ['posts', function(posts){
               return posts.getAll()

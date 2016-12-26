@@ -1,4 +1,4 @@
-angular.module('flapperNews')
+angular.module('chilBlog')
 .controller('PostsCtrl', [
     '$scope',
     '$stateParams',
@@ -6,6 +6,7 @@ angular.module('flapperNews')
     'post',
     function($scope, $stateParams, posts, post){
         $scope.post = post;
+        console.log($scope.post)
 
         $scope.incrementUpvotes = function(comment){
             posts.upvoteComment(post, comment);
